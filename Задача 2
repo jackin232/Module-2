@@ -1,0 +1,25 @@
+#include <ctype.h>
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    int words = 1;
+    string text = get_string("Text: ");
+    for (int i = 0; i < strlen(text); i++)
+    {
+         if (text[i] == 32)
+        {
+            for (int j = i; j < strlen(text); j++)
+            {
+                if (text[i+1] == 32)
+                {
+                    i++;
+                }
+            }
+            words++;
+        }
+    }
+    printf("%i\n", words);
+}
